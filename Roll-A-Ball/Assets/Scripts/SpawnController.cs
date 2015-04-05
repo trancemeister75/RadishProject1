@@ -23,6 +23,7 @@ public class SpawnController : MonoBehaviour {
 		while(count <= 20){
 			spawnLocation = new Vector3(Random.Range(-0.8f,0.8f) * 10, 1.5f, Random.Range(-0.8f,0.8f) * 10);
 			GameObject randomObject = (GameObject)Instantiate(myCube, spawnLocation, Quaternion.identity);
+			randomObject.AddComponent<Rigidbody>();
 			//MeshRenderer rend = randomObject.GetComponent<MeshRenderer>();
 			//rend.material = Resources.Load("Enemy") as Material;
 			float delay = 0.5f;

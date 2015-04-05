@@ -3,34 +3,23 @@ using System.Collections;
 
 public class ChaseController : MonoBehaviour
 {
-	public GameObject player;
+	//public GameObject player;
 	public float interpVelocity;
 	public Vector3 newPosition;
 	public Vector3 offset;
-	
+	public Rigidbody body;
 	// Use this for initialization
 	void Start ()
 	{
-		player = GameObject.Find ("Player");
-		StartCoroutine ("Chase");
+		//player = GameObject.Find ("Player");
+		body = GetComponent<Rigidbody> ();
+		//StartCoroutine ("Chase");
 	}
 
-	IEnumerator Chase()
+	void FixedUpdate()
 	{
-		while (true)
-		{
-			newPosition = new Vector3(Random.Range(-10f,10f) * 50, 0.5f, Random.Range(-10f,10f) * 50);
-			transform.position = Vector3.MoveTowards( transform.position, newPosition, 1f*Time.deltaTime);
-			
-			// If the object has arrived, stop the coroutine
-			if (transform.position == newPosition)
-			{
-				yield break;
-			}
-			
-			// Otherwise, continue next frame
-			yield return null;
-		}
+			//newPosition = new Vector3(Random.Range(-10f,10f) * 50, 0.5f, Random.Range(-10f,10f) * 50);
+			body.MovePosition(transform.position+transform.forward*Time.deltaTime);
 	}
 }
 
