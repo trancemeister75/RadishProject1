@@ -19,4 +19,12 @@ public class PlayerController : MonoBehaviour {
 		Rigidbody body = GetComponent<Rigidbody> ();
 		body.AddForce (movement * speed * Time.deltaTime);
 	}
+
+	void OnCollisionEnter(Collision c)
+	{
+		if(c.gameObject.name == "Player" && c.gameObject.name != "Ground")
+		{
+			Destroy (c.gameObject);
+		}
+	}
 }

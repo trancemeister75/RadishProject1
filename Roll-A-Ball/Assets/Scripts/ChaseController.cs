@@ -3,7 +3,7 @@ using System.Collections;
 
 public class ChaseController : MonoBehaviour
 {
-	//public GameObject player;
+	//public GameObject cube;
 	public float interpVelocity;
 	public Vector3 newPosition;
 	public Vector3 offset;
@@ -13,6 +13,7 @@ public class ChaseController : MonoBehaviour
 	{
 		//player = GameObject.Find ("Player");
 		body = GetComponent<Rigidbody> ();
+		//cube = GetComponent<GameObject> ();
 		//StartCoroutine ("Chase");
 	}
 

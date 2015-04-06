@@ -48,6 +48,7 @@
   <ItemGroup>
      <Compile Include="Assets\Scripts\CameraFollow.cs" />
      <Compile Include="Assets\Scripts\ChaseController.cs" />
+     <Compile Include="Assets\Scripts\DestroyController.cs" />
      <Compile Include="Assets\Scripts\PlayerController.cs" />
      <Compile Include="Assets\Scripts\SpawnController.cs" />
  <Reference Include="UnityEngine.UI">

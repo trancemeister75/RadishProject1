@@ -11,6 +11,7 @@ public class SpawnController : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		myCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
+		myCube.name = "Cube";
 		StartCoroutine ("CreateCubes");
 	}
 	
@@ -23,13 +24,11 @@ public class SpawnController : MonoBehaviour {
 		while(count <= 20){
 			spawnLocation = new Vector3(Random.Range(-0.8f,0.8f) * 10, 1.5f, Random.Range(-0.8f,0.8f) * 10);
 			GameObject randomObject = (GameObject)Instantiate(myCube, spawnLocation, Quaternion.identity);
-			randomObject.AddComponent<Rigidbody>();
-			//MeshRenderer rend = randomObject.GetComponent<MeshRenderer>();
-			//rend.material = Resources.Load("Enemy") as Material;
+			randomObject.AddComponent<Rigidbody>();;
 			float delay = 0.5f;
 			yield return new WaitForSeconds (delay);
 				count++;
+			randomObject.name = myCube.name+count;
 		}
 	}
-	
 }
