@@ -8,7 +8,7 @@ public class SpawnController : MonoBehaviour {
 	public int count;
 
 	void Start () {
-		StartCoroutine ("CreateCubes");ñ
+		StartCoroutine ("CreateCubes");
 	}
 
 	void FixedUpdate () {

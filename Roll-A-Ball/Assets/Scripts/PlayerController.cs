@@ -22,7 +22,10 @@ public class PlayerController : MonoBehaviour {
 		float moveHorizontal = Input.GetAxis ("Horizontal")*(true ? -1 : 1);
 		float moveVertical = Input.GetAxis ("Vertical")*(true ? -1 : 1);
 
-		Vector3 movement = new Vector3 (moveHorizontal,0.0f,moveVertical);
+		//Si el input es desktop
+		//Vector3 movement = new Vector3 (moveHorizontal,0.0f,moveVertical);
+		//Si el input es Movil
+		Vector3 movement = new Vector3 (Input.acceleration.x,0.0f,Input.acceleration.z);
 
 		Rigidbody body = GetComponent<Rigidbody> ();
 		body.AddForce (movement * speed * Time.deltaTime * 2.1f);
