@@ -21,7 +21,7 @@ public class SpawnController : MonoBehaviour {
 	}
 
 	IEnumerator CreateCubes() {
-		while(count <= 50){
+		while(count <= 70){
 			spawnLocation = new Vector3(Random.Range(-0.8f,0.8f) * 10, 1.5f, Random.Range(-0.8f,0.8f) * 10);
 			GameObject randomObject = (GameObject)Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), spawnLocation, Quaternion.identity);
 			randomObject.transform.localScale += new Vector3(2,2,2);
