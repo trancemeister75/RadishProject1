@@ -4,27 +4,22 @@ using System.Collections;
 public class SpawnController : MonoBehaviour {
 
 	public Vector3 spawnLocation;
-	//public GameObject myCube;	
 	public float mySpeed;
 	public int count;
 
-	// Use this for initialization
 	void Start () {
-		//myCube = GameObject.CreatePrimitive(PrimitiveType.Cube);
-		//myCube.name = "Cube";
-		StartCoroutine ("CreateCubes");
+		StartCoroutine ("CreateCubes");ñ
 	}
-	
-	// Update is called once per frame
-	void Update () {
+
+	void FixedUpdate () {
 
 	}
 
 	IEnumerator CreateCubes() {
 		while(count <= 70){
-			spawnLocation = new Vector3(Random.Range(-0.8f,0.8f) * 10, 1.5f, Random.Range(-0.8f,0.8f) * 10);
-			GameObject randomObject = (GameObject)Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), spawnLocation, Quaternion.identity);
-			randomObject.transform.localScale += new Vector3(2,2,2);
+			spawnLocation = new Vector3(Random.Range(-1.5f,1.5f) * 10, 0.5f, Random.Range(-1.5f,1.5f) * 10);
+			GameObject randomObject = (GameObject)Instantiate(GameObject.CreatePrimitive(PrimitiveType.Sphere), spawnLocation, Quaternion.identity);
+			randomObject.transform.localScale += new Vector3(1.5f,1.5f,1.5f);
 			randomObject.AddComponent<Rigidbody>();;
 			float delay = 0.5f;
 			yield return new WaitForSeconds (delay);
