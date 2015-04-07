@@ -2,9 +2,12 @@
 using System.Collections;
 
 public class PlayerController : MonoBehaviour {
+	public GameObject destruir;
+	public GameObject ground;
+
 	void Start()
 	{
-
+		ground = GameObject.Find ("Ground");
 	}
 
 	public float speed;
@@ -22,9 +25,11 @@ public class PlayerController : MonoBehaviour {
 
 	void OnCollisionEnter(Collision c)
 	{
-		if(c.gameObject.name == "Player" && c.gameObject.name != "Ground")
+		Physics.IgnoreCollision (ground.GetComponent<Collider>(),c.collider);
+		if(c.gameObject.name.Contains("Cube"))
 		{
-			Destroy (c.gameObject);
+			destruir = c.gameObject;
+			//Destroy(c.gameObject);
 		}
 	}
 }
