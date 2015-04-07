@@ -24,6 +24,7 @@ public class SpawnController : MonoBehaviour {
 		while(count <= 100){
 			spawnLocation = new Vector3(Random.Range(-0.8f,0.8f) * 10, 1.5f, Random.Range(-0.8f,0.8f) * 10);
 			GameObject randomObject = (GameObject)Instantiate(GameObject.CreatePrimitive(PrimitiveType.Cube), spawnLocation, Quaternion.identity);
+			randomObject.transform.localScale += new Vector3(2,2,2);
 			randomObject.AddComponent<Rigidbody>();;
 			float delay = 0.5f;
 			yield return new WaitForSeconds (delay);

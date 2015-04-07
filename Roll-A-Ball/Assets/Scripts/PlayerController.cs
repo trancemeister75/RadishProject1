@@ -20,7 +20,7 @@ public class PlayerController : MonoBehaviour {
 		Vector3 movement = new Vector3 (moveHorizontal,0.0f,moveVertical);
 
 		Rigidbody body = GetComponent<Rigidbody> ();
-		body.AddForce (movement * speed * Time.deltaTime);
+		body.AddForce (movement * speed * Time.deltaTime * 2f);
 	}
 
 	void OnCollisionEnter(Collision c)
